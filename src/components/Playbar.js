@@ -23,6 +23,8 @@ export class Playbar extends Component {
 
   handleClick = (e) => {
     let icon = document.querySelector(".Playbar-icon");
+    console.log(this.props.streamSrc);
+    
     let stream = document.querySelector("#stream");
     if (icon.src == playbtn) {
       icon.src = stopbtn;
@@ -42,7 +44,7 @@ export class Playbar extends Component {
             display: "none",
           }}
           id="stream"
-          src="https://streaming.gometri.com/stream/8039/stream"
+          src={`${"https://tupanel.info:8746/stream"}`}
           controls
         ></audio>
         <div className="Playbar_info">
@@ -60,7 +62,7 @@ export class Playbar extends Component {
               className="Playbar-icon"
               src={playbtn}
               alt="icono de play"
-              onClick={this.handleClick}
+              onClick={this.props.handleChangeRadio}
             />
           </div>
           <div className="Playbar_controls-volume">
